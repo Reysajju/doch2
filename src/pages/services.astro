@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Custom Dress Design',
+    description: 'Transform your raw Baluchi dress with unique, personalized designs tailored to your preferences.',
+    image: '/imgs/baluchi_doch (7).jpeg'
+  },
+  {
+    title: 'Embroidery Work',
+    description: 'Add intricate embroidery patterns that blend traditional motifs with contemporary designs.',
+    image: '/imgs/baluchi_doch (8).jpeg'
+  },
+  {
+    title: 'Alterations',
+    description: 'Perfect the fit of your Baluchi dress with our expert alteration services.',
+    image: '/imgs/baluchi_doch (9).jpeg'
+  },
+  {
+    title: 'Design Consultation',
+    description: 'Get professional guidance on design choices that will enhance your dress while maintaining its traditional essence.',
+    image: '/imgs/baluchi_doch (10).jpeg'
+  }
+];
+---
+
+<Layout title="Our Services">
+  <main class="container mx-auto px-4 py-20">
+    <h1 class="font-display text-4xl text-primary text-center mb-12">Our Services</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {services.map(service => (
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+          <img src={service.image} alt={service.title} class="w-full h-48 object-cover" />
+          <div class="p-8">
+            <h3 class="font-display text-xl text-primary mb-4">{service.title}</h3>
+            <p class="text-gray-700">{service.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>

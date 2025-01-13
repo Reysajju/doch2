@@ -1,0 +1,35 @@
+---
+const links = [
+  { text: 'Home', href: '/' },
+  { text: 'About', href: '/about' },
+  { text: 'Services', href: '/services' },
+  { text: 'Portfolio', href: '/portfolio' },
+  { text: 'How It Works', href: '/how-it-works' },
+  { text: 'Contact', href: '/contact' },
+];
+---
+
+<header class="bg-white shadow-md">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="/logo.svg" alt="Baluchi Doch" class="h-12" />
+      </a>
+      <ul class="hidden md:flex space-x-8">
+        {links.map(link => (
+          <li>
+            <a href={link.href} class="text-gray-700 hover:text-primary transition-colors">
+              {link.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <button class="md:hidden">
+        <span class="sr-only">Open menu</span>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const steps = [
+  {
+    title: 'Initial Contact',
+    description: 'Reach out to us through our contact form with your requirements and preferences.'
+  },
+  {
+    title: 'Ship Your Dress',
+    description: 'Send your raw Baluchi dress to our workshop in Punjab using our secure shipping process.'
+  },
+  {
+    title: 'Design Consultation',
+    description: 'Our team will discuss your design preferences and provide professional recommendations.'
+  },
+  {
+    title: 'Customization',
+    description: 'Expert tailors will carefully customize your dress according to the agreed design.'
+  },
+  {
+    title: 'Quality Check',
+    description: 'Each piece undergoes thorough quality inspection to ensure perfection.'
+  },
+  {
+    title: 'Delivery',
+    description: 'Your beautifully customized dress is carefully packaged and shipped back to you.'
+  }
+];
+---
+
+<Layout title="How It Works">
+  <main class="container mx-auto px-4 py-20">
+    <h1 class="font-display text-4xl text-primary text-center mb-12">How It Works</h1>
+    
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-12">
+        {steps.map((step, index) => (
+          <div class="flex items-start gap-6">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center flex-shrink-0">
+              {index + 1}
+            </div>
+            <div>
+              <h3 class="font-display text-xl text-primary mb-2">{step.title}</h3>
+              <p class="text-gray-700">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
